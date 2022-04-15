@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   //Send message from start button to the target tab
   const startBtn = document.querySelector(".start-btn");
   startBtn.addEventListener("click", () => {
-    startBtn.classList.add("clicked");
-    stopBtn.classList.remove("clicked");
+    startBtn.classList.add("start-clicked");
+    stopBtn.classList.remove("stop-clicked");
     if (i != 1) {
       chrome.storage.sync.set({ state: "start" });
       chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
   //Send message from stop button to the target tab
   const stopBtn = document.querySelector(".stop-btn");
   stopBtn.addEventListener("click", () => {
-    stopBtn.classList.add("clicked");
-    startBtn.classList.remove("clicked");
+    stopBtn.classList.add("stop-clicked");
+    startBtn.classList.remove("start-clicked");
     if (i != 2) {
       chrome.storage.sync.set({ state: "end" });
       chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
@@ -35,10 +35,10 @@ document.addEventListener("DOMContentLoaded", () => {
   //Keep buttons style after close popup
   chrome.storage.sync.get("state", function (storage) {
     if (storage.state == "start") {
-      startBtn.classList.add("clicked");
+      startBtn.classList.add("start-clicked");
     } else {
-      startBtn.classList.remove("clicked");
-      stopBtn.classList.add("clicked");
+      startBtn.classList.remove("start-clicked");
+      stopBtn.classList.add("stop-clicked");
     }
   });
 });

@@ -1,6 +1,6 @@
 body {
-  width: 100px;
-  height: 150px;
+  width: 150px;
+  height: 170px;
   text-align: center;
 }
 .container {
@@ -10,26 +10,42 @@ body {
   justify-content: center;
 }
 input[type="submit"] {
-  width: 80px;
-  height: 30px;
+  width: 90px;
+  height: 40px;
   margin: 10px;
-  border-radius: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #000;
+  border: none;
+  border-radius: 45px;
+  cursor: pointer;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
-.start-btn {
-  color: white;
-  background-color: rgba(0, 128, 0, 0.8);
+input[type="submit"]:active {
+  transform: translateY(-2px);
 }
-.stop-btn {
-  color: white;
-  background-color: rgba(255, 0, 0, 0.8);
+.start-btn, .stop-btn {
+  background-color: rgba(153, 137, 137, 0.5);
 }
-.clicked {
-  font-size: 20px;
-  font-weight: bold;
-  border: 3px solid black;
+.start-btn:hover {
+  color: #fff;
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(30, 228, 149, 0.4);
+}
+.stop-btn:hover {
+  color: #fff;
+  background-color: #ff3333;
+  box-shadow: 0px 15px 20px rgba(249, 63, 63, 0.4);
+}
+.start-clicked {
+  background-color: #1ee495;
+}
+.stop-clicked {
+  background-color: #f93f3f;
 }
 a {
   font-weight: bold;
   color: black;
   text-decoration: none;
- }
+}
