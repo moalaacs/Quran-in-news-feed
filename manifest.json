@@ -1,7 +1,7 @@
 {
   "name": "Quran in news feed",
   "description": "Get rid of social media noise by replacing your news feed with a verse from the Quran.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "manifest_version": 3,
   "icons": {
     "16": "icon.png",
@@ -10,19 +10,13 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "https://www.facebook.com/"
-      ],
-      "js": [
-        "content.js"
-      ],
+      "matches": ["https://www.facebook.com/"],
+      "js": ["content.js"],
       "run_at": "document_end"
     }
   ],
   "action": {
     "default_popup": "popup.html"
   },
-  "permissions": [
-    "storage"
-  ]
+  "permissions": ["storage"]
 }
