@@ -154,7 +154,7 @@ const ayat = [
 ];
 
 const theme = document.querySelector("#facebook");
-const feed = document.querySelector("[role='feed']");
+const feed = document.querySelectorAll("[role='feed'],div.x1unhpq9")[0];
 
 function clearFeed() {
   feed.style.display = "none";
